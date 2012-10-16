@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Unrealupdater by arbonagw</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/arbonagw/UnrealUpdater">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/arbonagw/UnrealUpdater/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/arbonagw/UnrealUpdater/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Unrealupdater</h1>
+          <p>A C++ updater for UDK games, built with Qt4</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/arbonagw">arbonagw</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>UnrealUpdater</h1>
+
+<p>A C++ updater for UDK games, built with Qt4.</p>
+
+<h2>Overview</h2>
+
+<p>UUpdater is a lightweight updater software built with Qt4, usable to deploy your UDK game simply over FTP, without additionnal work.
+It was developped for the free FPS <a href="http://deepvoid.eu/" title="DeepVoid">DeepVoid</a>, and is now available for everyone to use. Right now, no major deployment has been made and the tool is still in development, use at your own risks.</p>
+
+<p>When launched on client, it will trigger .NET 4 installation if not detected, since this is needed by UDK and packed in the standard installer.</p>
+
+<h2>User-side configuration files</h2>
+
+<p>There are currently a few configuration files in the <em>Config/</em> folder, created on startup.</p>
+
+<ol>
+<li> <em>UU_Lock.setting</em> is generated, do not use.</li>
+<li> <em>UU_AutoLaunch.setting</em>, if existing, will trigger auto-launch of the game after updating. Delete it to abort this.</li>
+<li> <em>UU_Dedicated.setting</em>, if existing, will make the game launch on server mode using the configured map.</li>
+<li> <em>UU_Map.setting</em> contains the map name to launch on server mode, but you can very well add various parameters here for the UDK command line.</li>
+</ol><h2>How to use</h2>
+
+<p>Currently, the updater use a frehs installation of your game. This means that the first condition is that you build, cook and package your game with UnrealFrontend, then install (using the packaged installer) it in a new separated folder.
+This process will generate a file tree that you can use here. Do not use this process on a UDK development folder.</p>
+
+<ol>
+<li> First, edit the image resources in the <em>Res/</em> folder to match your game's UI. Use the sample <em>Res_Sample/</em> folder and rename it.</li>
+<li> Edit <em>res/project.h</em> to set your about dialog and FTP data.</li>
+<li> Use QTCreator to build the game. You <strong>should</strong> use a static build of Qt so that the updater is a single file.</li>
+<li> Edit ReleaseNotes.xml on your server to update the description on the updater main window.</li>
+<li> Edit Binaries/InstallData/GameManifest.xml to add a "md5" field on each "FileProperties" node with the MD5 checksum of the file.</li>
+<li> You should really check that all of this works locally.</li>
+<li> Your updater is ready, feel free to rename it and distribute it.</li>
+</ol><p><strong>Beware : this is GPL'd software. You have to provide the sources (or a link to them on GitHub).</strong></p>
+
+<h2>ReleaseNotes.xml syntax</h2>
+
+<pre><code>&lt;ReleaseNotes&gt;
+    &lt;Version&gt;MajorRelease42&lt;/Version&gt;
+    &lt;Date&gt;DDMMYY&lt;/Date&gt;
+    &lt;Notes&gt;*Title*
+
+    Text, text, text.&lt;/Notes&gt;
+    &lt;NotUpdatedFile&gt;UDKGame/Config/i-will-not-be-erased.ini&lt;/NotUpdatedFile&gt;
+&lt;/ReleaseNotes&gt;
+</code></pre>
+
+<h2>GameManifest.xml syntax</h2>
+
+<pre><code>&lt;FolderProperties FolderName="."&gt;
+    &lt;Folders&gt;
+        &lt;FolderProperties FolderName="FolderA"&gt;
+            &lt;Folders/&gt;
+            &lt;Files&gt;
+                &lt;FileProperties FileName="FileA" Size="889416" md5="53406e9988306cbd4537677c5336aba4"/&gt;
+                &lt;FileProperties FileName="FileB" Size="45014" md5="54498899854584bd4534584bd336a544"/&gt;
+            &lt;/Files&gt;
+        &lt;/FolderProperties&gt;
+    &lt;/Folders&gt;
+    &lt;Files/&gt;
+&lt;/FolderProperties&gt;
+</code></pre>
+
+<hr><p>Contact, people, etc</p>
+
+<p>UnrealUpdater is developped by Gwennaël ARBONA.
+In case of bugs, questions, requests, ideas, please use the message system on GitHub.</p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
