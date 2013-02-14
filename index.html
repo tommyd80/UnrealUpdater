@@ -1,51 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Unrealupdater by arbonagw</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
     <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
+    <title>Unrealupdater by arbonagw</title>
   </head>
+
   <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.com/arbonagw/UnrealUpdater">View On GitHub</a></li>
-          <li class="downloads"><a href="https://github.com/arbonagw/UnrealUpdater/zipball/master">ZIP</a></li>
-          <li class="downloads"><a href="https://github.com/arbonagw/UnrealUpdater/tarball/master">TAR</a></li>
-          <li class="title">DOWNLOADS</li>
-        </nav>
-      </div><!-- end header -->
+    <header>
+      <div class="inner">
+        <h1>Unrealupdater</h1>
+        <h2>A C++ updater for UDK games, built with Qt4</h2>
+        <a href="https://github.com/arbonagw/UnrealUpdater" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
 
-    <div class="wrapper">
-
-      <section>
-        <div id="title">
-          <h1>Unrealupdater</h1>
-          <p>A C++ updater for UDK games, built with Qt4</p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/arbonagw">arbonagw</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
-        </div>
-
-        <h1>UnrealUpdater</h1>
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>UnrealUpdater</h1>
 
 <p>A C++ updater for UDK games, built with Qt4.</p>
 
 <h2>Overview</h2>
 
-<p>UUpdater is a lightweight updater software built with Qt4, usable to deploy your UDK game simply over FTP, without additionnal work.
-It was developped for the free FPS <a href="http://deepvoid.eu/" title="DeepVoid">DeepVoid</a>, and is now available for everyone to use. Right now, no major deployment has been made and the tool is still in development, use at your own risks.</p>
+<p>UUpdater is a lightweight updater software built with Qt4, usable to deploy your UDK game simply over FTP, without additionnal work.<br>
+It was developped for the free FPS <a href="http://deepvoid.eu/" title="DeepVoid">DeepVoid</a>, and is now available for everyone to use. Right now, no major deployment has been made and the tool is still in development, use at your own risks.  </p>
 
 <p>When launched on client, it will trigger .NET 4 installation if not detected, since this is needed by UDK and packed in the standard installer.</p>
 
@@ -60,7 +50,7 @@ It was developped for the free FPS <a href="http://deepvoid.eu/" title="DeepVoid
 <li> <em>UU_Map.setting</em> contains the map name to launch on server mode, but you can very well add various parameters here for the UDK command line.</li>
 </ol><h2>How to use</h2>
 
-<p>Currently, the updater use a frehs installation of your game. This means that the first condition is that you build, cook and package your game with UnrealFrontend, then install (using the packaged installer) it in a new separated folder.
+<p>Currently, the updater use a frehs installation of your game. This means that the first condition is that you build, cook and package your game with UnrealFrontend, then install (using the packaged installer) it in a new separated folder.<br>
 This process will generate a file tree that you can use here. Do not use this process on a UDK development folder.</p>
 
 <ol>
@@ -101,14 +91,29 @@ This process will generate a file tree that you can use here. Do not use this pr
 &lt;/FolderProperties&gt;
 </code></pre>
 
-<hr><p>Contact, people, etc</p>
+<h2>Contact, people, etc</h2>
 
-<p>UnrealUpdater is developped by Gwennaël ARBONA.
+<p>UnrealUpdater is developped by Gwennaël ARBONA.<br>
 In case of bugs, questions, requests, ideas, please use the message system on GitHub.</p>
-      </section>
+        </section>
 
+        <aside id="sidebar">
+          <a href="https://github.com/arbonagw/UnrealUpdater/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/arbonagw/UnrealUpdater/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/arbonagw/UnrealUpdater"></a> is maintained by <a href="https://github.com/arbonagw">arbonagw</a>.</p>
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+
+  
   </body>
 </html>
